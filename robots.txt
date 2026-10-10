@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# GitHub Pages URL of yousefharby/Yousef (change only if the site moves)
+Sitemap: https://yousefharby.github.io/Yousef/sitemap.xml

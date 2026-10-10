@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Yousef Harby — Full-Stack Developer, Media Buyer &amp; Graphic Designer</title>
+  <meta name="description" content="Yousef Harby takes brands from zero to scale — websites, online stores, branding, Meta ads and Telegram order automation, all by one person. Based in Egypt, working worldwide.">
+  <meta name="author" content="Yousef Harby">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="color-scheme" content="dark">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- Site URL = GitHub Pages of the repo yousefharby/Yousef. Change it here, in JSON-LD, robots.txt and sitemap.xml only if the site moves (custom domain / other repo). -->
+  <link rel="canonical" href="https://yousefharby.github.io/Yousef/">
+  <link rel="alternate" hreflang="en" href="https://yousefharby.github.io/Yousef/">
+  <link rel="alternate" hreflang="ar" href="https://yousefharby.github.io/Yousef/?lang=ar">
+  <link rel="alternate" hreflang="x-default" href="https://yousefharby.github.io/Yousef/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Yousef Harby">
+  <meta property="og:title" content="Yousef Harby — Your one-person online department">
+  <meta property="og:description" content="Website, store, branding, ads and order automation — from zero to scale, by one person.">
+  <meta property="og:url" content="https://yousefharby.github.io/Yousef/">
+  <meta property="og:image" content="https://yousefharby.github.io/Yousef/public/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Yousef Harby — Portfolio">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ar_EG">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Yousef Harby — Your one-person online department">
+  <meta name="twitter:description" content="Website, store, branding, ads and order automation — from zero to scale, by one person.">
+  <meta name="twitter:image" content="https://yousefharby.github.io/Yousef/public/img/og-image.jpg">
+
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="public/icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="public/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preload" as="image" type="image/webp" href="public/img/yousef-cutout-960.webp" imagesrcset="public/img/yousef-cutout-640.webp 640w, public/img/yousef-cutout-960.webp 960w" imagesizes="(max-width: 767px) 96vw, 46vw" fetchpriority="high">
+
+  <script>
+    (function (d) {
+      var h = d.documentElement; h.classList.add('js');
+      try { var l = localStorage.getItem('yh-lang'); var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'ar' || q === 'en') l = q;
+        if (l === 'ar') { h.lang = 'ar'; h.dir = 'rtl'; }
+      } catch (e) {}
+      if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) h.classList.add('reduced-motion');
+      // font preloads (http/https only — browsers block crossorigin preloads on file://)
+      if (/^http/.test(location.protocol)) {
+        var f = ['anton-latin-400', 'manrope-latin-wght'];
+        if (h.lang === 'ar') f.push('alexandria-arabic-wght', 'aref-ruqaa-arabic-700');
+        f.forEach(function (n) {
+          var l = d.createElement('link'); l.rel = 'preload'; l.as = 'font'; l.type = 'font/woff2'; l.crossOrigin = 'anonymous';
+          l.href = 'public/fonts/' + n + '.woff2'; d.head.appendChild(l);
+        });
+      }
+    })(document);
+  </script>
+  <link rel="stylesheet" href="css/main.css">
+  <noscript><style>.preloader, .cursor, .lang-wipe { display: none !important; }</style></noscript>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yousef Harby",
+    "alternateName": "يوسف حربي",
+    "jobTitle": ["Full-Stack Developer", "Media Buyer", "Graphic Designer"],
+    "url": "https://yousefharby.github.io/Yousef/",
+    "image": "https://yousefharby.github.io/Yousef/public/img/og-image.jpg",
+    "telephone": "+201146164155",
+    "address": { "@type": "PostalAddress", "addressCountry": "EG" },
+    "sameAs": ["https://t.me/YHdevelopment", "https://sedrastores.com"],
+    "knowsAbout": ["Web development", "E-commerce", "Media buying", "Meta Ads", "Graphic design", "Branding", "Telegram bots", "Order automation"]
+  }
+  </script>
+
+  <script defer src="vendor/gsap/gsap.min.js"></script>
+  <script defer src="vendor/gsap/ScrollTrigger.min.js"></script>
+  <script defer src="vendor/gsap/SplitText.min.js"></script>
+  <script defer src="vendor/lenis/lenis.min.js"></script>
+  <script defer src="js/i18n.js"></script>
+  <script defer src="js/data.js"></script>
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-arrow-ur" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></symbol>
+    <symbol id="i-arrow-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></symbol>
+    <symbol id="i-arrow-d" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></symbol>
+    <symbol id="i-arrow-u" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></symbol>
+    <symbol id="i-phone-device" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></symbol>
+    <symbol id="i-chev-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></symbol>
+    <symbol id="i-chev-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 448 512" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></symbol>
+    <symbol id="i-telegram" viewBox="0 0 448 512" fill="currentColor"><path d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"></path></symbol>
+    <symbol id="i-yh" viewBox="0 0 1868 1760"><path d="M291 1760V1181L10 0H359L457 596L555 0H903L623 1181V1760Z M992 1760V0H1342V629H1508V0H1858V1760H1508V962H1342V1760Z"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+  <!-- ================= PRELOADER ================= -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__row">
+      <span>Yousef Harby</span>
+      <span class="preloader__year">Portfolio &copy; <span data-year>2026</span></span>
+    </div>
+    <svg class="preloader__mark" viewBox="0 0 1868 1760"><use href="#i-yh"/></svg>
+    <div class="preloader__row preloader__row--bottom">
+      <span class="preloader__label">Loading the department</span>
+      <span class="preloader__count"><span class="preloader__num"><i class="is-off">0</i><i class="is-off">0</i><i>0</i></span><span class="preloader__pct">%</span></span>
+    </div>
+    <div class="preloader__bar"><span></span></div>
+    <div class="preloader__wipe"></div>
+  </div>
+
+  <div class="lang-wipe" aria-hidden="true"><span class="lang-wipe__txt"></span></div>
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"><span class="cursor__label" data-i18n="cursor.view">View</span></div>
+    <div class="cursor__dot"></div>
+  </div>
+
+  <!-- ================= TOP BAR ================= -->
+  <header class="topbar" id="topbar">
+    <a class="topbar__brand" href="#top" aria-label="Yousef Harby — back to top" data-i18n-attr="aria-label:a11y.home">
+      <svg class="yh-mark" viewBox="0 0 1868 1760" aria-hidden="true"><use href="#i-yh"/></svg>
+      <span class="topbar__roles">
+        <span class="topbar__role topbar__role--red" data-i18n="top.role1">Full-stack developer</span>
+        <span class="topbar__role" data-i18n="top.role2">Media buyer · Graphic designer</span>
+      </span>
+    </a>
+    <nav class="topbar__nav" aria-label="Primary" data-i18n-attr="aria-label:a11y.nav">
+      <a class="nav-link" href="#work" data-i18n="nav.work">Work</a>
+      <a class="nav-link" href="#systems" data-i18n="nav.systems">Systems</a>
+      <a class="nav-link" href="#services" data-i18n="nav.services">Services</a>
+      <a class="nav-link" href="#process" data-i18n="nav.process">Process</a>
+      <a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="topbar__right">
+      <a class="topbar__avail" href="#contact" aria-label="Available for freelance — get in touch" data-i18n-attr="aria-label:top.availAria">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span data-i18n="top.avail">Available for freelance</span>
+        <span class="spark" aria-hidden="true">✦</span>
+      </a>
+      <button class="lang-toggle" type="button" aria-label="Switch language to Arabic" data-i18n-attr="aria-label:a11y.lang" data-magnetic>
+        <span class="lang-toggle__opt" data-lang-opt="en">EN</span>
+        <span class="lang-toggle__sep" aria-hidden="true">/</span>
+        <span class="lang-toggle__opt" data-lang-opt="ar">AR</span>
+      </button>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu" data-i18n-attr="aria-label:a11y.menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE MENU ================= -->
+  <div class="menu" id="menu" hidden>
+    <nav class="menu__nav" aria-label="Mobile" data-i18n-attr="aria-label:a11y.mnav">
+      <a class="menu__link" href="#work"><span class="menu__idx">01</span><span data-i18n="nav.work">Work</span></a>
+      <a class="menu__link" href="#systems"><span class="menu__idx">02</span><span data-i18n="nav.systems">Systems</span></a>
+      <a class="menu__link" href="#services"><span class="menu__idx">03</span><span data-i18n="nav.services">Services</span></a>
+      <a class="menu__link" href="#process"><span class="menu__idx">04</span><span data-i18n="nav.process">Process</span></a>
+      <a class="menu__link" href="#contact"><span class="menu__idx">05</span><span data-i18n="nav.contact">Contact</span></a>
+    </nav>
+    <div class="menu__foot">
+      <a href="https://wa.me/201146164155" target="_blank" rel="noopener">WhatsApp ↗</a>
+      <a href="https://t.me/YHdevelopment" target="_blank" rel="noopener">Telegram ↗</a>
+      <a href="tel:+201146164155" dir="ltr">+20&nbsp;114&nbsp;616&nbsp;4155</a>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="top" data-bg="#0a0a0a" aria-labelledby="hero-name">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__word hero__word--back" aria-hidden="true"><span class="hero__word-inner" dir="ltr">PORTFOLIO</span></div>
+
+      <figure class="hero__portrait">
+        <picture class="hero__halo" aria-hidden="true">
+          <source type="image/webp" srcset="public/img/yousef-glow.webp">
+          <img src="public/img/yousef-glow.png" alt="" width="320" height="372" decoding="async" fetchpriority="high">
+        </picture>
+        <picture>
+          <source type="image/webp" srcset="public/img/yousef-cutout-640.webp 640w, public/img/yousef-cutout-960.webp 960w" sizes="(max-width: 767px) 96vw, 46vw">
+          <img class="hero__photo" src="public/img/yousef-cutout-960.png" srcset="public/img/yousef-cutout-640.png 640w, public/img/yousef-cutout-960.png 960w" sizes="(max-width: 767px) 96vw, 46vw" width="959" height="1169" alt="Portrait of Yousef Harby in a black shirt" data-i18n-attr="alt:hero.alt" fetchpriority="high" decoding="async">
+        </picture>
+        <div class="hero__front" aria-hidden="true">
+          <div class="hero__front-move">
+            <div class="hero__word hero__word--front"><span class="hero__word-inner" dir="ltr">PORTFOLIO</span></div>
+          </div>
+        </div>
+      </figure>
+
+      <div class="hero__content">
+        <div class="hero__intro">
+          <p class="hero__hello" data-i18n="hero.hello">Hello, I'm</p>
+          <h1 class="hero__name" id="hero-name" data-i18n="hero.name">Yousef<br>Harby</h1>
+          <p class="hero__roles" data-i18n="hero.roles">Full-stack developer, media buyer &amp; graphic designer</p>
+          <p class="hero__bio" data-i18n="hero.bio">I take brands from zero to scale — alone. Website, store, branding, ads and order automation, built and run by one person. No extra team needed.</p>
+          <p class="hero__avail"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><span data-i18n="hero.avail">Available worldwide</span><span class="pulse-dot" aria-hidden="true"></span></p>
+        </div>
+
+        <aside class="hero__side" aria-label="At a glance" data-i18n-attr="aria-label:a11y.glance">
+          <div class="hero__tagline">
+            <span class="hero__spark" aria-hidden="true">✦</span>
+            <p data-i18n="hero.tagline">Your one-person online department — from zero to a selling brand.</p>
+          </div>
+          <ul class="hero__stats">
+            <!-- [EDIT] years of experience (placeholder) -->
+            <li class="stat"><span class="stat__num"><span data-count="2">2</span><span class="stat__plus">+</span></span><span class="stat__label" data-i18n="hero.stat1">Years<br>experience</span></li>
+            <!-- [EDIT] projects completed (8 = the distinct builds shown on this page) -->
+            <li class="stat"><span class="stat__num"><span data-count="8">8</span><span class="stat__plus">+</span></span><span class="stat__label" data-i18n="hero.stat2">Projects<br>completed</span></li>
+            <!-- [EDIT] happy clients (placeholder) -->
+            <li class="stat"><span class="stat__num"><span data-count="5">5</span><span class="stat__plus">+</span></span><span class="stat__label" data-i18n="hero.stat3">Happy<br>clients</span></li>
+          </ul>
+        </aside>
+      </div>
+
+      <a class="hero__scroll" href="#work" aria-label="Scroll to selected projects" data-i18n-attr="aria-label:a11y.scroll">
+        <span data-i18n="hero.scroll">Scroll</span>
+        <span class="hero__scroll-line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ================= MARQUEE ================= -->
+    <section class="marquee" aria-label="Skills" data-i18n-attr="aria-label:a11y.skills">
+      <div class="marquee__band marquee__band--red">
+        <div class="marquee__track" data-i18n="marquee.skills">
+          <span>Web development</span><i>✦</i><span>E-commerce</span><i>✦</i><span>Media buying</span><i>✦</i><span>Meta ads</span><i>✦</i><span>Branding</span><i>✦</i><span>Graphic design</span><i>✦</i><span>Telegram bots</span><i>✦</i><span>Order automation</span><i>✦</i>
+        </div>
+      </div>
+      <div class="marquee__band marquee__band--dark" aria-hidden="true">
+        <div class="marquee__track marquee__track--reverse" dir="ltr">
+          <span>Sedra Store</span><i>✦</i><span>YOURS</span><i>✦</i><span>Om Nour</span><i>✦</i><span>27 Juniors</span><i>✦</i><span>Yousef × Venom</span><i>✦</i><span>Telegram order bots</span><i>✦</i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= IDEA ================= -->
+    <section class="idea" id="about" data-bg="#0a0a0a" aria-labelledby="idea-title">
+      <p class="label"><span class="label__idx">00</span><span data-i18n="idea.label">The idea</span></p>
+      <h2 class="idea__statement" id="idea-title" data-i18n="idea.statement">I'm your <em>one-person</em> online department. Website, store, brand, ads and order automation — one vision, one deadline, zero hand-offs.</h2>
+      <div class="idea__trio">
+        <article class="idea__card" data-reveal="up">
+          <span class="idea__idx">01</span>
+          <h3 data-i18n="idea.t1">Developer</h3>
+          <p data-i18n="idea.d1">Builds the website, the store and the dashboard behind it.</p>
+        </article>
+        <article class="idea__card" data-reveal="up">
+          <span class="idea__idx">02</span>
+          <h3 data-i18n="idea.t2">Media buyer</h3>
+          <p data-i18n="idea.d2">Brings the buyers with Meta ads that are tracked from day one.</p>
+        </article>
+        <article class="idea__card" data-reveal="up">
+          <span class="idea__idx">03</span>
+          <h3 data-i18n="idea.t3">Designer</h3>
+          <p data-i18n="idea.d3">Makes the brand look worth its price — online and in every ad.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= SELECTED PROJECTS ================= -->
+    <section class="work" id="work" data-bg="#0a0a0a" aria-labelledby="work-title">
+      <div class="work__pin">
+        <header class="work__head">
+          <h2 class="work__title" id="work-title" data-i18n="work.title">Selected projects</h2>
+          <span class="work__rule" aria-hidden="true"></span>
+          <p class="work__count" aria-live="polite"><span class="work__current">01</span><span class="work__sep">/</span><span class="work__total">08</span></p>
+        </header>
+
+        <div class="work__viewport">
+          <div class="work__bgword" aria-hidden="true" dir="ltr">WORK — WORK — WORK</div>
+          <ol class="work__track">
+            <li class="work__intro" data-num="01">
+              <!-- [EDIT] year range -->
+              <p class="label"><span class="label__idx">01—08</span><span data-i18n="work.introLabel">Selected work · 2024 — 2026</span></p>
+              <p class="work__intro-big" data-i18n="work.introBig">Built.<br>Launched.<br><em>Selling.</em></p>
+              <p class="work__intro-text" data-i18n="work.introText">Eight builds — from a live store taking real orders to brand concepts and experiments. Scroll to explore.</p>
+              <span class="work__intro-arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow-r"/></svg></span>
+            </li>
+
+            <!-- 01 — flagship -->
+            <li class="project project--featured" data-project="sedra-store" data-num="01">
+              <div class="project__index" aria-hidden="true">01</div>
+              <button class="project__frame" type="button" data-cursor="view" data-open-case="sedra-store" aria-label="Open case study: Sedra Store" data-i18n-attr="aria-label:work.open1">
+                <span class="browser">
+                  <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">sedrastores.com</span></span>
+                  <span class="browser__screen">
+                    <picture>
+                      <source type="image/webp" srcset="public/work/sedra-store-640.webp 640w, public/work/sedra-store-960.webp 960w, public/work/sedra-store-1265.webp 1265w" sizes="(max-width: 1023px) 90vw, 46vw">
+                      <img src="public/work/sedra-store-960.jpg" srcset="public/work/sedra-store-640.jpg 640w, public/work/sedra-store-960.jpg 960w, public/work/sedra-store-1265.jpg 1265w" sizes="(max-width: 1023px) 90vw, 46vw" width="1265" height="897" loading="lazy" decoding="async" alt="Sedra Store homepage — Arabic prayer-mat store with three product categories" data-i18n-attr="alt:p1.alt">
+                    </picture>
+                    <span class="browser__glow" aria-hidden="true"></span>
+                  </span>
+                </span>
+              </button>
+              <div class="project__meta">
+                <p class="project__live"><span class="pulse-dot" aria-hidden="true"></span><span data-i18n="work.live">Live · taking orders</span></p>
+                <h3 class="project__title" data-i18n="p1.title">Sedra Store</h3>
+                <p class="project__cat"><span data-i18n="p1.cat">E-commerce · Prayer mats</span> · <span class="project__year">2026</span></p>
+                <p class="project__desc" data-i18n="p1.desc">Arabic e-commerce for prayer mats — order system, shipping logic, admin dashboard and a Telegram order bot.</p>
+                <dl class="project__metrics">
+                  <div><dt data-i18n="m.visitors">Visitors</dt><dd>9.5K+</dd></div>
+                  <div><dt data-i18n="m.orders">Orders</dt><dd>180+</dd></div>
+                  <div><dt data-i18n="m.cr">Conversion</dt><dd>1.9%</dd></div>
+                </dl>
+                <div class="project__links">
+                  <a class="link-u" href="https://sedrastores.com" target="_blank" rel="noopener"><span data-i18n="work.visit">Visit site</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+                  <button class="link-u" type="button" data-open-case="sedra-store"><span data-i18n="work.case">Case study</span><svg class="icon icon--flip" aria-hidden="true"><use href="#i-arrow-r"/></svg></button>
+                </div>
+              </div>
+            </li>
+
+            <!-- 02 -->
+            <li class="project" data-project="sedra-luxury" data-num="02">
+              <div class="project__index" aria-hidden="true">02</div>
+              <button class="project__frame" type="button" data-cursor="view" data-open-case="sedra-luxury" aria-label="Open case study: Sedra Stores luxury concept" data-i18n-attr="aria-label:work.open2">
+                <span class="browser">
+                  <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">youdefharby407-blip.github.io/Sedra-Store</span></span>
+                  <span class="browser__screen">
+                    <picture>
+                      <source type="image/webp" srcset="public/work/sedra-luxury-640.webp 640w, public/work/sedra-luxury-960.webp 960w, public/work/sedra-luxury-1265.webp 1265w" sizes="(max-width: 1023px) 90vw, 40vw">
+                      <img src="public/work/sedra-luxury-960.jpg" srcset="public/work/sedra-luxury-640.jpg 640w, public/work/sedra-luxury-960.jpg 960w, public/work/sedra-luxury-1265.jpg 1265w" sizes="(max-width: 1023px) 90vw, 40vw" width="1265" height="897" loading="lazy" decoding="async" alt="Sedra Stores luxury concept — dark and gold hero reading Comfort in Every Prayer" data-i18n-attr="alt:p2.alt">
+                    </picture>
+                    <span class="browser__glow" aria-hidden="true"></span>
+                  </span>
+                </span>
+              </button>
+              <div class="project__meta">
+                <div class="project__row">
+                  <span class="project__num" aria-hidden="true">02</span>
+                  <div class="project__heading">
+                    <h3 class="project__title" data-i18n="p2.title">Sedra Stores — Luxury concept</h3>
+                    <p class="project__cat"><span data-i18n="p2.cat">E-commerce · Concept</span> · <span class="project__year">2026</span><!-- [EDIT] year --></p>
+                  </div>
+                  <a class="project__visit" href="https://youdefharby407-blip.github.io/Sedra-Store/" target="_blank" rel="noopener" aria-label="Visit site: Sedra Stores concept (opens in a new tab)" data-i18n-attr="aria-label:work.visit2"><span data-i18n="work.visit">Visit site</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+                </div>
+                <p class="project__desc project__desc--sm" data-i18n="p2.desc">A premium English storefront concept for the same brand — editorial, black and gold.</p>
+                <div class="project__foot"><button class="link-u" type="button" data-open-case="sedra-luxury"><span data-i18n="work.case">Case study</span><svg class="icon icon--flip" aria-hidden="true"><use href="#i-arrow-r"/></svg></button></div>
+              </div>
+            </li>
+
+            <!-- 03 -->
+            <li class="project" data-project="yours-beauty" data-num="03">
+              <div class="project__index" aria-hidden="true">03</div>
+              <button class="project__frame" type="button" data-cursor="view" data-open-case="yours-beauty" aria-label="Open case study: YOURS Beauty Treatment" data-i18n-attr="aria-label:work.open3">
+                <span class="browser">
+                  <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">yousefharby.github.io/yours</span></span>
+                  <span class="browser__screen">
+                    <picture>
+                      <source type="image/webp" srcset="public/work/yours-beauty-640.webp 640w, public/work/yours-beauty-960.webp 960w, public/work/yours-beauty-1265.webp 1265w" sizes="(max-width: 1023px) 90vw, 40vw">
+                      <img src="public/work/yours-beauty-960.jpg" srcset="public/work/yours-beauty-640.jpg 640w, public/work/yours-beauty-960.jpg 960w, public/work/yours-beauty-1265.jpg 1265w" sizes="(max-width: 1023px) 90vw, 40vw" width="1265" height="897" loading="lazy" decoding="async" alt="YOURS Beauty Treatment — Arabic hero of a luxury hair-care store with a salon backdrop" data-i18n-attr="alt:p3.alt">
+                    </picture>
+                    <span class="browser__glow" aria-hidden="true"></span>
+                  </span>
+                </span>
+              </button>
+              <div class="project__meta">
+                <div class="project__row">
+                  <span class="project__num" aria-hidden="true">03</span>
+                  <div class="project__heading">
+                    <h3 class="project__title" data-i18n="p3.title">YOURS Beauty Treatment</h3>
+                    <p class="project__cat"><span data-i18n="p3.cat">E-commerce · Hair care · AR/EN</span> · <span class="project__year">2026</span><!-- [EDIT] year --></p>
+                  </div>
+                  <a class="project__visit" href="https://yousefharby.github.io/yours/" target="_blank" rel="noopener" aria-label="Visit site: YOURS Beauty Treatment (opens in a new tab)" data-i18n-attr="aria-label:work.visit3"><span data-i18n="work.visit">Visit site</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+                </div>
+                <p class="project__desc project__desc--sm" data-i18n="p3.desc">A bilingual luxury hair-care store for a salon brand.</p>
+                <div class="project__foot"><button class="link-u" type="button" data-open-case="yours-beauty"><span data-i18n="work.case">Case study</span><svg class="icon icon--flip" aria-hidden="true"><use href="#i-arrow-r"/></svg></button></div>
+              </div>
+            </li>
+
+            <!-- 04 -->
+            <li class="project" data-project="om-nour" data-num="04">
+              <div class="project__index" aria-hidden="true">04</div>
+              <button class="project__frame" type="button" data-cursor="view" data-open-case="om-nour" aria-label="Open case study: Om Nour" data-i18n-attr="aria-label:work.open4">
+                <span class="browser">
+                  <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">youdefharby407-blip.github.io/Om-nour</span></span>
+                  <span class="browser__screen">
+                    <picture>
+                      <source type="image/webp" srcset="public/work/om-nour-640.webp 640w, public/work/om-nour-960.webp 960w, public/work/om-nour-1265.webp 1265w" sizes="(max-width: 1023px) 90vw, 40vw">
+                      <img src="public/work/om-nour-960.jpg" srcset="public/work/om-nour-640.jpg 640w, public/work/om-nour-960.jpg 960w, public/work/om-nour-1265.jpg 1265w" sizes="(max-width: 1023px) 90vw, 40vw" width="1265" height="897" loading="lazy" decoding="async" alt="Om Nour — dark green and gold hero for a luxury herbs brand" data-i18n-attr="alt:p4.alt">
+                    </picture>
+                    <span class="browser__glow" aria-hidden="true"></span>
+                  </span>
+                </span>
+              </button>
+              <div class="project__meta">
+                <div class="project__row">
+                  <span class="project__num" aria-hidden="true">04</span>
+                  <div class="project__heading">
+                    <h3 class="project__title" data-i18n="p4.title">Om Nour — Luxury Herbs</h3>
+                    <p class="project__cat"><span data-i18n="p4.cat">E-commerce · Herbs · Order bot</span> · <span class="project__year">2026</span></p>
+                  </div>
+                  <a class="project__visit" href="https://youdefharby407-blip.github.io/Om-nour/" target="_blank" rel="noopener" aria-label="Visit site: Om Nour (opens in a new tab)" data-i18n-attr="aria-label:work.visit4"><span data-i18n="work.visit">Visit site</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+                </div>
+                <p class="project__desc project__desc--sm" data-i18n="p4.desc">A luxury herbs store wired to its own Telegram order bot.</p>
+                <div class="project__foot"><button class="link-u" type="button" data-open-case="om-nour"><span data-i18n="work.case">Case study</span><svg class="icon icon--flip" aria-hidden="true"><use href="#i-arrow-r"/></svg></button></div>
+              </div>
+            </li>
+
+            <!-- 05 -->
+            <li class="project" data-project="27-juniors" data-num="05">
+              <div class="project__index" aria-hidden="true">05</div>
+              <button class="project__frame" type="button" data-cursor="view" data-open-case="27-juniors" aria-label="Open case study: 27 Juniors" data-i18n-attr="aria-label:work.open5">
+                <span class="browser">
+                  <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">yousefharby.github.io/Zmls</span></span>
+                  <span class="browser__screen">
+                    <picture>
+                      <source type="image/webp" srcset="public/work/27-juniors-640.webp 640w, public/work/27-juniors-960.webp 960w, public/work/27-juniors-1265.webp 1265w" sizes="(max-width: 1023px) 90vw, 40vw">
+                      <img src="public/work/27-juniors-960.jpg" srcset="public/work/27-juniors-640.jpg 640w, public/work/27-juniors-960.jpg 960w, public/work/27-juniors-1265.jpg 1265w" sizes="(max-width: 1023px) 90vw, 40vw" width="1265" height="897" loading="lazy" decoding="async" alt="27 Juniors — purple class community site with a large 27 Juniors title" data-i18n-attr="alt:p5.alt">
+                    </picture>
+                    <span class="browser__glow" aria-hidden="true"></span>
+                  </span>
+                </span>
+              </button>
+              <div class="project__meta">
+                <div class="project__row">
+                  <span class="project__num" aria-hidden="true">05</span>
+                  <div class="project__heading">
+                    <h3 class="project__title" data-i18n="p5.title">27 Juniors</h3>
+                    <p class="project__cat"><span data-i18n="p5.cat">Community website · School class</span> · <span class="project__year">2025</span><!-- [EDIT] year --></p>
+                  </div>
+                  <a class="project__visit" href="https://yousefharby.github.io/Zmls/" target="_blank" rel="noopener" aria-label="Visit site: 27 Juniors (opens in a new tab)" data-i18n-attr="aria-label:work.visit5"><span data-i18n="work.visit">Visit site</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+                </div>
+                <p class="project__desc project__desc--sm" data-i18n="p5.desc">A community site for a school class — students, teachers, gallery.</p>
+                <div class="project__foot"><button class="link-u" type="button" data-open-case="27-juniors"><span data-i18n="work.case">Case study</span><svg class="icon icon--flip" aria-hidden="true"><use href="#i-arrow-r"/></svg></button></div>
+              </div>
+            </li>
+
+            <!-- 06 -->
+            <li class="project" data-project="yousef-venom" data-num="06">
+              <div class="project__index" aria-hidden="true">06</div>
+              <button class="project__frame" type="button" data-cursor="view" data-open-case="yousef-venom" aria-label="Open case study: Yousef × Venom" data-i18n-attr="aria-label:work.open6">
+                <span class="browser">
+                  <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">youdefharby407-blip.github.io/Yousef-X-Venom</span></span>
+                  <span class="browser__screen">
+                    <picture>
+                      <source type="image/webp" srcset="public/work/yousef-venom-640.webp 640w, public/work/yousef-venom-960.webp 960w, public/work/yousef-venom-1265.webp 1265w" sizes="(max-width: 1023px) 90vw, 40vw">
+                      <img src="public/work/yousef-venom-960.jpg" srcset="public/work/yousef-venom-640.jpg 640w, public/work/yousef-venom-960.jpg 960w, public/work/yousef-venom-1265.jpg 1265w" sizes="(max-width: 1023px) 90vw, 40vw" width="1265" height="897" loading="lazy" decoding="async" alt="Yousef × Venom — red and black alter-ego page with a hover reveal portrait" data-i18n-attr="alt:p6.alt">
+                    </picture>
+                    <span class="browser__glow" aria-hidden="true"></span>
+                  </span>
+                </span>
+              </button>
+              <div class="project__meta">
+                <div class="project__row">
+                  <span class="project__num" aria-hidden="true">06</span>
+                  <div class="project__heading">
+                    <h3 class="project__title" data-i18n="p6.title">Yousef × Venom</h3>
+                    <p class="project__cat"><span data-i18n="p6.cat">Creative · Interactive alter ego</span> · <span class="project__year">2026</span><!-- [EDIT] year --></p>
+                  </div>
+                  <a class="project__visit" href="https://youdefharby407-blip.github.io/Yousef-X-Venom/" target="_blank" rel="noopener" aria-label="Visit site: Yousef × Venom (opens in a new tab)" data-i18n-attr="aria-label:work.visit6"><span data-i18n="work.visit">Visit site</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+                </div>
+                <p class="project__desc project__desc--sm" data-i18n="p6.desc">An interactive alter-ego page — hover to reveal the symbiote.</p>
+                <div class="project__foot"><button class="link-u" type="button" data-open-case="yousef-venom"><span data-i18n="work.case">Case study</span><svg class="icon icon--flip" aria-hidden="true"><use href="#i-arrow-r"/></svg></button></div>
+              </div>
+            </li>
+
+            <!-- 07 + 08 archive -->
+            <li class="archive" data-project="archive" data-num="08">
+              <div class="archive__head">
+                <span class="project__num" aria-hidden="true">07—08</span>
+                <div>
+                  <h3 class="archive__title" data-i18n="work.archive">Archive</h3>
+                  <p class="project__cat" data-i18n="work.archiveSub">Earlier portfolio versions</p>
+                </div>
+              </div>
+              <div class="archive__cards">
+                <article class="archive__card" data-project="portfolio-v1">
+                  <button class="project__frame project__frame--sm" type="button" data-cursor="view" data-open-case="portfolio-v1" aria-label="Open: Portfolio v1 (gold)" data-i18n-attr="aria-label:work.open7">
+                    <span class="browser">
+                      <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">…/My-Portfolio</span></span>
+                      <span class="browser__screen">
+                        <picture>
+                          <source type="image/webp" srcset="public/work/portfolio-v1-640.webp 640w, public/work/portfolio-v1-960.webp 960w" sizes="(max-width: 1023px) 80vw, 24vw">
+                          <img src="public/work/portfolio-v1-640.jpg" srcset="public/work/portfolio-v1-640.jpg 640w, public/work/portfolio-v1-960.jpg 960w" sizes="(max-width: 1023px) 80vw, 24vw" width="1265" height="897" loading="lazy" decoding="async" alt="Portfolio v1 — black and gold serif hero reading Yousef Harby" data-i18n-attr="alt:p7.alt">
+                        </picture>
+                        <span class="browser__glow" aria-hidden="true"></span>
+                      </span>
+                    </span>
+                  </button>
+                  <div class="archive__meta">
+                    <span class="archive__idx">07</span>
+                    <span class="archive__name" data-i18n="p7.title">Portfolio v1 — Gold</span>
+                    <a class="project__visit project__visit--sm" href="https://youdefharby407-blip.github.io/My-Portfolio/" target="_blank" rel="noopener" aria-label="Visit site: Portfolio v1 (opens in a new tab)" data-i18n-attr="aria-label:work.visit7"><svg class="icon" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+                  </div>
+                </article>
+                <article class="archive__card" data-project="portfolio-v3">
+                  <button class="project__frame project__frame--sm" type="button" data-cursor="view" data-open-case="portfolio-v3" aria-label="Open: Portfolio v3 (neon)" data-i18n-attr="aria-label:work.open8">
+                    <span class="browser">
+                      <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url">…/My-Protifolio-3</span></span>
+                      <span class="browser__screen">
+                        <picture>
+                          <source type="image/webp" srcset="public/work/portfolio-v3-640.webp 640w, public/work/portfolio-v3-960.webp 960w" sizes="(max-width: 1023px) 80vw, 24vw">
+                          <img src="public/work/portfolio-v3-640.jpg" srcset="public/work/portfolio-v3-640.jpg 640w, public/work/portfolio-v3-960.jpg 960w" sizes="(max-width: 1023px) 80vw, 24vw" width="1265" height="897" loading="lazy" decoding="async" alt="Portfolio v3 — neon gradient hero reading Yousef Harby Creates Digital Experiences" data-i18n-attr="alt:p8.alt">
+                        </picture>
+                        <span class="browser__glow" aria-hidden="true"></span>
+                      </span>
+                    </span>
+                  </button>
+                  <div class="archive__meta">
+                    <span class="archive__idx">08</span>
+                    <span class="archive__name" data-i18n="p8.title">Portfolio v3 — Neon</span>
+                    <a class="project__visit project__visit--sm" href="https://youdefharby407-blip.github.io/My-Protifolio-3/" target="_blank" rel="noopener" aria-label="Visit site: Portfolio v3 (opens in a new tab)" data-i18n-attr="aria-label:work.visit8"><svg class="icon" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+                  </div>
+                </article>
+              </div>
+            </li>
+
+            <li class="work__outro" data-num="08">
+              <p class="label"><span class="label__idx">→</span><span data-i18n="work.outroLabel">Next</span></p>
+              <p class="work__outro-big" data-i18n="work.outroBig">Websites get the order.<br><em>Systems</em> make sure you never miss one.</p>
+              <a class="btn btn--ghost" href="#systems" data-magnetic><span data-i18n="work.outroBtn">See the systems</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-d"/></svg></a>
+            </li>
+          </ol>
+        </div>
+
+        <div class="work__foot">
+          <span class="work__hint" data-i18n="work.hint">Scroll</span>
+          <div class="work__progress" aria-hidden="true"><span></span></div>
+          <span class="work__hint work__hint--swipe" data-i18n="work.swipe">Swipe</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SYSTEMS & AUTOMATION ================= -->
+    <section class="systems" id="systems" data-bg="#0b0a0b" aria-labelledby="systems-title">
+      <header class="section-head">
+        <p class="label"><span class="label__idx">09—11</span><span data-i18n="sys.label">Systems &amp; automation</span></p>
+        <h2 class="h-display" id="systems-title" data-split data-i18n="sys.title">Systems that run the business</h2>
+        <p class="section-lead" data-i18n="sys.lead">A store is only as good as what happens after the click. I build the plumbing too — so every order is caught, counted and acted on.</p>
+      </header>
+
+      <div class="bots">
+        <div class="bots__copy">
+          <p class="bots__idx" aria-hidden="true">09 + 10</p>
+          <h3 class="h-sub" data-i18n="sys.botsTitle">Telegram order bots</h3>
+          <p class="bots__lead" data-i18n="sys.botsLead">Every order lands in your Telegram instantly — name, products, totals, shipping, payment, timestamp.</p>
+          <ul class="ticks">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sys.b1">Product photo with every order</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sys.b2">Customer name, phone &amp; address</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sys.b3">Items, totals &amp; shipping zone</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sys.b4">Payment method, device &amp; timestamp</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sys.b5">Unique order ID for follow-up</span></li>
+          </ul>
+          <p class="note" data-i18n="sys.botsNote">Real bots: Sedra Store &amp; Om Nour. Customer details are blurred.</p>
+        </div>
+
+        <div class="bots__stage">
+          <!-- desktop telegram (Sedra Store) -->
+          <div class="tg-window" role="img" aria-label="Sedra Store Telegram bot receiving a new order with product photo, items, totals and shipping" data-i18n-attr="aria-label:sys.tgAlt1">
+            <div class="tg-window__bar" aria-hidden="true"><i></i><i></i><i></i><span>Telegram — Sedra store</span></div>
+            <div class="tg-window__screen">
+              <picture class="tg-layer tg-sedra-header"><source type="image/webp" srcset="public/systems/tg-sedra-header.webp"><img src="public/systems/tg-sedra-header.png" alt="" width="605" height="49" loading="lazy" decoding="async"></picture>
+              <picture class="tg-layer tg-sedra-bubble"><source type="image/webp" srcset="public/systems/tg-sedra-bubble.webp"><img src="public/systems/tg-sedra-bubble.png" alt="" width="422" height="763" loading="lazy" decoding="async"></picture>
+              <picture class="tg-layer tg-sedra-input"><source type="image/webp" srcset="public/systems/tg-sedra-input.webp"><img src="public/systems/tg-sedra-input.png" alt="" width="601" height="48" loading="lazy" decoding="async"></picture>
+              <div class="tg-toast" aria-hidden="true">
+                <span class="tg-toast__icon"><svg class="icon"><use href="#i-telegram"/></svg></span>
+                <span class="tg-toast__body"><b>Sedra store</b><span dir="rtl">🛍️ طلب جديد — سيدرا ستور</span><span class="tg-toast__meta" dir="rtl">رقم الطلب: SED-0194 · الإجمالي: 945 ج</span></span>
+              </div>
+            </div>
+          </div>
+          <!-- phone telegram (Om Nour) -->
+          <div class="phone" role="img" aria-label="Om Nour Telegram bot on a phone receiving a new order message" data-i18n-attr="aria-label:sys.tgAlt2">
+            <div class="phone__screen">
+              <picture class="tg-layer tg-om-header"><source type="image/webp" srcset="public/systems/tg-omnour-header.webp"><img src="public/systems/tg-omnour-header.png" alt="" width="603" height="88" loading="lazy" decoding="async"></picture>
+              <picture class="tg-layer tg-om-chip"><source type="image/webp" srcset="public/systems/tg-omnour-chip.webp"><img src="public/systems/tg-omnour-chip.png" alt="" width="104" height="43" loading="lazy" decoding="async"></picture>
+              <picture class="tg-layer tg-om-bubble"><source type="image/webp" srcset="public/systems/tg-omnour-bubble.webp"><img src="public/systems/tg-omnour-bubble.png" alt="" width="534" height="575" loading="lazy" decoding="async"></picture>
+              <picture class="tg-layer tg-om-input"><source type="image/webp" srcset="public/systems/tg-omnour-input.webp"><img src="public/systems/tg-omnour-input.png" alt="" width="587" height="98" loading="lazy" decoding="async"></picture>
+              <div class="push" aria-hidden="true">
+                <span class="push__icon"><svg class="icon"><use href="#i-telegram"/></svg></span>
+                <span class="push__body">
+                  <span class="push__top"><b>Om nour sales</b><small>now</small></span>
+                  <span class="push__msg" dir="rtl">🛒 طلب جديد #0001 — Om Nour</span>
+                </span>
+              </div>
+              <span class="phone__island" aria-hidden="true"></span>
+            </div>
+          </div>
+          <span class="bots__ping" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <div class="dash">
+        <div class="dash__frame" data-reveal="mask">
+          <div class="dash__bar" aria-hidden="true"><i></i><i></i><i></i><span data-i18n="sys.dashBar">Sedra Store · Admin — Analytics</span></div>
+          <picture>
+            <source type="image/webp" srcset="public/systems/sedra-dashboard-800.webp 800w, public/systems/sedra-dashboard-1265.webp 1265w" sizes="(max-width: 1023px) 92vw, 58vw">
+            <img src="public/systems/sedra-dashboard-1265.jpg" srcset="public/systems/sedra-dashboard-800.jpg 800w, public/systems/sedra-dashboard-1265.jpg 1265w" sizes="(max-width: 1023px) 92vw, 58vw" width="1265" height="897" loading="lazy" decoding="async" alt="Sedra Store admin analytics: visitors, page views, order-form opens, orders, conversion rate, top governorates and best-selling designs" data-i18n-attr="alt:sys.dashAlt">
+          </picture>
+        </div>
+        <div class="dash__copy">
+          <p class="bots__idx" aria-hidden="true">11</p>
+          <h3 class="h-sub" data-i18n="sys.dashTitle">Admin dashboard &amp; analytics</h3>
+          <p class="bots__lead" data-i18n="sys.dashLead">Own your data: visitors, funnel, conversion, best-selling designs, top governorates.</p>
+          <dl class="kpis">
+            <div class="kpi"><dt data-i18n="m.visitors">Visitors</dt><dd><span data-count="9.5" data-decimals="1">9.5</span>K+</dd></div>
+            <div class="kpi"><dt data-i18n="m.forms">Order-form opens</dt><dd><span data-count="330">330</span>+</dd></div>
+            <div class="kpi"><dt data-i18n="m.orders">Orders</dt><dd><span data-count="180">180</span>+</dd></div>
+            <div class="kpi"><dt data-i18n="m.cr">Conversion</dt><dd><span data-count="1.9" data-decimals="1">1.9</span>%</dd></div>
+          </dl>
+          <div class="gov">
+            <p class="gov__title" data-i18n="sys.gov">Top governorates · orders</p>
+            <ul class="gov__list">
+              <li style="--w:100%"><span data-i18n="gov.cairo">Cairo</span><b>110</b></li>
+              <li style="--w:37.3%"><span data-i18n="gov.giza">Giza</span><b>41</b></li>
+              <li style="--w:7.3%"><span data-i18n="gov.qalyubia">Qalyubia</span><b>8</b></li>
+              <li style="--w:7.3%"><span data-i18n="gov.alex">Alexandria</span><b>8</b></li>
+            </ul>
+          </div>
+          <p class="note" data-i18n="sys.dashNote">Live numbers from the Sedra Store dashboard.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section class="services" id="services" data-bg="#0a0a0a" aria-labelledby="services-title">
+      <header class="section-head section-head--row">
+        <div>
+          <p class="label"><span class="label__idx">✦</span><span data-i18n="svc.label">Services</span></p>
+          <h2 class="h-display" id="services-title" data-split data-i18n="svc.title">What I can do for you</h2>
+        </div>
+        <p class="section-lead" data-i18n="svc.lead">Hire one person for one piece — or for the whole thing. Every service plugs into the others.</p>
+      </header>
+
+      <ol class="svc-list">
+        <li class="svc" data-preview="public/work/sedra-store-640.webp" tabindex="0">
+          <span class="svc__idx">01</span>
+          <div class="svc__main">
+            <h3 class="svc__title" data-i18n="svc.t1">Web development &amp; e-commerce</h3>
+            <div class="svc__body"><div>
+              <p data-i18n="svc.d1">Fast, conversion-focused websites and online stores — Arabic (RTL) or English — with cart, checkout, shipping rules and an admin dashboard you'll actually use.</p>
+              <ul class="svc__tags" data-i18n="svc.g1"><li>Online stores</li><li>Landing pages</li><li>Admin dashboards</li><li>AR / EN</li></ul>
+            </div></div>
+          </div>
+          <span class="svc__arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow-ur"/></svg></span>
+        </li>
+        <li class="svc" data-preview="public/systems/sedra-dashboard-800.webp" tabindex="0">
+          <span class="svc__idx">02</span>
+          <div class="svc__main">
+            <h3 class="svc__title" data-i18n="svc.t2">Media buying / performance ads</h3>
+            <div class="svc__body"><div>
+              <p data-i18n="svc.d2">Meta (Facebook &amp; Instagram) campaigns planned around your margins — audiences, creatives, pixel tracking, testing and scaling what works.</p>
+              <ul class="svc__tags" data-i18n="svc.g2"><li>Campaign strategy</li><li>Ad creatives</li><li>Pixel &amp; tracking</li><li>Reporting</li></ul>
+            </div></div>
+          </div>
+          <span class="svc__arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow-ur"/></svg></span>
+        </li>
+        <li class="svc" data-preview="public/work/sedra-luxury-640.webp" tabindex="0">
+          <span class="svc__idx">03</span>
+          <div class="svc__main">
+            <h3 class="svc__title" data-i18n="svc.t3">Graphic design &amp; branding</h3>
+            <div class="svc__body"><div>
+              <p data-i18n="svc.d3">Logos, visual identity, social media designs and ad creatives that make a small brand look established from day one.</p>
+              <ul class="svc__tags" data-i18n="svc.g3"><li>Logo &amp; identity</li><li>Social media designs</li><li>Ad creatives</li><li>Product visuals</li></ul>
+            </div></div>
+          </div>
+          <span class="svc__arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow-ur"/></svg></span>
+        </li>
+        <li class="svc" data-preview="public/systems/tg-sedra-bubble.webp" tabindex="0">
+          <span class="svc__idx">04</span>
+          <div class="svc__main">
+            <h3 class="svc__title" data-i18n="svc.t4">Telegram bots &amp; order automation</h3>
+            <div class="svc__body"><div>
+              <p data-i18n="svc.d4">Every order lands in your Telegram the second it's placed — product image, customer data, totals, shipping, payment method and timestamp.</p>
+              <ul class="svc__tags" data-i18n="svc.g4"><li>Order bots</li><li>Instant notifications</li><li>Order IDs</li><li>Analytics</li></ul>
+            </div></div>
+          </div>
+          <span class="svc__arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow-ur"/></svg></span>
+        </li>
+        <li class="svc" data-preview="public/work/yours-beauty-640.webp" tabindex="0">
+          <span class="svc__idx">05</span>
+          <div class="svc__main">
+            <h3 class="svc__title" data-i18n="svc.t5">Full brand launch — zero to online</h3>
+            <div class="svc__body"><div>
+              <p data-i18n="svc.d5">The whole department in one person: brand, website, store, ads and automation — launched and running without hiring a team.</p>
+              <ul class="svc__tags" data-i18n="svc.g5"><li>Brand + store</li><li>Ads + tracking</li><li>Order bot</li><li>One point of contact</li></ul>
+            </div></div>
+          </div>
+          <span class="svc__arrow" aria-hidden="true"><svg class="icon"><use href="#i-arrow-ur"/></svg></span>
+        </li>
+      </ol>
+      <div class="svc-preview" aria-hidden="true"><img alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" width="640" height="454"></div>
+    </section>
+
+    <!-- ================= SKILLS + PROCESS + QUOTE ================= -->
+    <section class="about" id="process" data-bg="#0d0707" aria-label="Skills, process and philosophy" data-i18n-attr="aria-label:a11y.about">
+      <div class="about__grid">
+        <div class="about__col about__skills">
+          <h2 class="about__title" data-i18n="skills.title">Skills &amp; toolkit</h2>
+          <div class="skill-group">
+            <h3 class="label label--red" data-i18n="skills.dev">Development</h3>
+            <ul class="chips">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li><li>Node.js</li><li>Firebase</li><li>Telegram Bot API</li><li>REST APIs</li><li>Git &amp; GitHub</li><li data-i18n="skills.rtl">RTL / Arabic UI</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="label label--red" data-i18n="skills.ads">Media buying</h3>
+            <ul class="chips">
+              <li>Meta Ads Manager</li><li>Meta Pixel</li><li data-i18n="skills.testing">A/B testing</li><li data-i18n="skills.funnels">Funnels &amp; analytics</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3 class="label label--red" data-i18n="skills.design">Design</h3>
+            <ul class="chips">
+              <li>Figma</li><li>Photoshop</li><li>Illustrator</li><li data-i18n="skills.brand">Brand identity</li><li data-i18n="skills.seo">SEO basics</li>
+            </ul>
+          </div>
+          <!-- [EDIT] Optional education block — uncomment and fill in if you want it
+          <div class="skill-group">
+            <h3 class="label label--red">Education</h3>
+            <p class="edu"><b>Degree / course name</b><span>School · Year</span></p>
+          </div>
+          -->
+        </div>
+
+        <div class="about__col about__process">
+          <h2 class="about__title" data-i18n="process.title">Zero to brand</h2>
+          <ol class="process">
+            <li class="process__line" aria-hidden="true"><span></span></li>
+            <li class="step">
+              <span class="step__num">01</span>
+              <span class="step__icon" aria-hidden="true"><svg class="icon"><use href="#i-search"/></svg></span>
+              <div class="step__txt"><h3 data-i18n="process.t1">Discover</h3><p data-i18n="process.d1">Product, audience, offer and the numbers that matter.</p></div>
+            </li>
+            <li class="step">
+              <span class="step__num">02</span>
+              <span class="step__icon" aria-hidden="true"><svg class="icon"><use href="#i-pen"/></svg></span>
+              <div class="step__txt"><h3 data-i18n="process.t2">Brand &amp; design</h3><p data-i18n="process.d2">Identity and visuals built to convert, not just to look good.</p></div>
+            </li>
+            <li class="step">
+              <span class="step__num">03</span>
+              <span class="step__icon" aria-hidden="true"><svg class="icon"><use href="#i-code"/></svg></span>
+              <div class="step__txt"><h3 data-i18n="process.t3">Build</h3><p data-i18n="process.d3">Website or store, checkout, shipping rules and admin — fast and responsive.</p></div>
+            </li>
+            <li class="step">
+              <span class="step__num">04</span>
+              <span class="step__icon" aria-hidden="true"><svg class="icon"><use href="#i-target"/></svg></span>
+              <div class="step__txt"><h3 data-i18n="process.t4">Launch ads</h3><p data-i18n="process.d4">Meta campaigns with tracking from day one. Test, find winners, scale.</p></div>
+            </li>
+            <li class="step">
+              <span class="step__num">05</span>
+              <span class="step__icon" aria-hidden="true"><svg class="icon"><use href="#i-zap"/></svg></span>
+              <div class="step__txt"><h3 data-i18n="process.t5">Automate &amp; scale</h3><p data-i18n="process.d5">Order bot, analytics and optimisation — so the business runs while you sleep.</p></div>
+            </li>
+          </ol>
+        </div>
+
+        <aside class="about__quote" aria-label="Philosophy" data-i18n-attr="aria-label:a11y.quote">
+          <span class="quote__mark" aria-hidden="true">“</span>
+          <blockquote class="quote__text" data-i18n="quote.text">Design gets the attention. Code earns the trust. Ads bring the buyers. I handle all three — so nothing gets lost in between.</blockquote>
+          <p class="quote__sign" data-i18n="quote.sign">Yousef</p>
+          <p class="quote__cta" data-i18n="quote.cta">Let's build something that sells.</p>
+          <span class="quote__spark" aria-hidden="true">✦</span>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="contact" id="contact" data-bg="#0a0a0a" aria-labelledby="contact-title">
+      <div class="contact__grid">
+        <div class="contact__left">
+          <h2 class="contact__title" id="contact-title" data-split data-i18n="contact.title">Let's work<br><span class="nowrap">together <span class="spark">✦</span></span></h2>
+          <p class="contact__text" data-i18n="contact.text">Have a brand, an idea or a store that needs to sell? Send a message — I reply fast and I'll tell you honestly what you need (and what you don't).</p>
+          <a class="contact__status" href="https://wa.me/201146164155" target="_blank" rel="noopener" data-magnetic>
+            <span class="contact__status-ico"><svg class="icon icon--flip" aria-hidden="true"><use href="#i-arrow-r"/></svg></span>
+            <span data-i18n="top.avail">Available for freelance</span>
+          </a>
+        </div>
+
+        <ul class="contact__list">
+          <li><a class="contact__item" href="https://wa.me/201146164155" target="_blank" rel="noopener">
+            <span class="contact__ico"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
+            <span class="contact__lbl"><small>WhatsApp</small><span dir="ltr">+20&nbsp;114&nbsp;616&nbsp;4155</span></span>
+            <svg class="icon contact__go" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a></li>
+          <li><a class="contact__item" href="tel:+201146164155">
+            <span class="contact__ico"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>
+            <span class="contact__lbl"><small data-i18n="contact.phone">Phone</small><span dir="ltr">01146164155</span></span>
+            <svg class="icon contact__go" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a></li>
+          <li><a class="contact__item" href="https://t.me/YHdevelopment" target="_blank" rel="noopener">
+            <span class="contact__ico"><svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg></span>
+            <span class="contact__lbl"><small data-i18n="contact.tg">Telegram channel — my work</small><span dir="ltr">t.me/YHdevelopment</span></span>
+            <svg class="icon contact__go" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a></li>
+          <li><div class="contact__item contact__item--static">
+            <span class="contact__ico"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+            <!-- [EDIT] city (optional) -->
+            <span class="contact__lbl"><small data-i18n="contact.base">Based in</small><span data-i18n="contact.where">Egypt · working worldwide</span></span>
+          </div></li>
+        </ul>
+
+        <form class="brief" id="brief" novalidate>
+          <p class="brief__title"><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg><span data-i18n="brief.title">Quick brief → WhatsApp</span></p>
+          <label class="field">
+            <span data-i18n="brief.name">Your name</span>
+            <input type="text" name="name" autocomplete="name" maxlength="60" placeholder="Name" data-i18n-attr="placeholder:brief.namePh">
+          </label>
+          <fieldset class="field">
+            <legend data-i18n="brief.need">What do you need?</legend>
+            <div class="brief__opts">
+              <label class="opt"><input type="checkbox" name="need" value="web"><span data-i18n="brief.o1">Website / store</span></label>
+              <label class="opt"><input type="checkbox" name="need" value="ads"><span data-i18n="brief.o2">Ads</span></label>
+              <label class="opt"><input type="checkbox" name="need" value="brand"><span data-i18n="brief.o3">Branding</span></label>
+              <label class="opt"><input type="checkbox" name="need" value="bot"><span data-i18n="brief.o4">Telegram bot</span></label>
+              <label class="opt"><input type="checkbox" name="need" value="launch"><span data-i18n="brief.o5">Full launch</span></label>
+            </div>
+          </fieldset>
+          <label class="field">
+            <span data-i18n="brief.msg">Tell me about it (optional)</span>
+            <textarea name="msg" rows="3" maxlength="600" placeholder="Product, timeline, budget…" data-i18n-attr="placeholder:brief.msgPh"></textarea>
+          </label>
+          <button class="btn btn--red" type="submit" data-magnetic><span data-i18n="brief.send">Send on WhatsApp</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-ur"/></svg></button>
+          <p class="brief__note" data-i18n="brief.note">Opens WhatsApp with your message ready — nothing is stored here.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer" data-bg="#0a0a0a">
+    <p class="footer__big" aria-hidden="true" dir="ltr"><span>YOUSEF</span><span>HARBY</span></p>
+    <div class="footer__bar">
+      <p>&copy; <span data-year>2026</span> Yousef Harby. <span data-i18n="footer.rights">Designed &amp; coded by me.</span></p>
+      <p class="footer__links">
+        <a class="link-u" href="https://t.me/YHdevelopment" target="_blank" rel="noopener">Telegram</a>
+        <a class="link-u" href="https://wa.me/201146164155" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="link-u" href="https://sedrastores.com" target="_blank" rel="noopener">Sedra Store</a>
+      </p>
+      <a class="to-top" href="#top" data-magnetic><span data-i18n="footer.top">Back to top</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-u"/></svg></a>
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING WHATSAPP ================= -->
+  <a class="wa-float" href="https://wa.me/201146164155?text=Hi%20Yousef%2C%20I%20saw%20your%20portfolio%20%F0%9F%91%8B" target="_blank" rel="noopener" aria-label="Chat with Yousef on WhatsApp" data-i18n-attr="aria-label:a11y.wa" data-magnetic>
+    <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+    <span class="wa-float__label" data-i18n="wa.label">Chat on WhatsApp</span>
+  </a>
+
+  <!-- ================= CASE STUDY OVERLAY ================= -->
+  <div class="case" id="case" role="dialog" aria-modal="true" aria-labelledby="case-title" hidden>
+    <div class="case__bg"></div>
+    <div class="case__scroll" data-lenis-prevent>
+      <div class="case__top">
+        <span class="case__index" aria-hidden="true">01</span>
+        <button class="case__close" type="button" aria-label="Close case study" data-i18n-attr="aria-label:case.close"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      </div>
+      <div class="case__hero">
+        <div class="case__frame browser">
+          <span class="browser__bar" aria-hidden="true"><i></i><i></i><i></i><span class="browser__url"></span></span>
+          <span class="browser__screen"><picture><source type="image/webp"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="" width="1265" height="897" decoding="async"></picture></span>
+        </div>
+      </div>
+      <div class="case__body">
+        <p class="case__cat label"></p>
+        <h2 class="case__title" id="case-title">Case study</h2>
+        <p class="case__lead"></p>
+        <dl class="case__facts"></dl>
+        <div class="case__metrics"></div>
+        <div class="case__cols">
+          <div class="case__col"><h3 class="label label--red" data-i18n="case.built">What I built</h3><ul class="case__list case__built"></ul></div>
+          <div class="case__col"><h3 class="label label--red" data-i18n="case.stack">Stack</h3><ul class="chips case__stack"></ul></div>
+        </div>
+        <div class="case__actions">
+          <a class="btn btn--red case__visit" href="#" target="_blank" rel="noopener" data-magnetic><span data-i18n="case.visit">Visit live site</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+          <a class="btn btn--ghost" href="https://wa.me/201146164155" target="_blank" rel="noopener"><span data-i18n="case.want">Want one like this?</span><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+        </div>
+      </div>
+      <button class="case__next" type="button">
+        <span class="label" data-i18n="case.next">Next project</span>
+        <span class="case__next-title"></span>
+        <svg class="icon icon--flip" aria-hidden="true"><use href="#i-arrow-r"/></svg>
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>
